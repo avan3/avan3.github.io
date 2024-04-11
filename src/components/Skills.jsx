@@ -100,7 +100,9 @@ const Skills = () => {
       <section className="w-full md:w-[1020px] text-center">
         <h2 className={`${styles.heading2}`}>Skills.</h2>
         <hr className="w-48 h-1 mx-auto my-4 bg-orange-600 border-0 rounded md:my-5 \" />
-        <section className={`${styles.flexCenter} flex-col md:flex-row`}>
+        <section
+          className={`${styles.flexCenter} flex-col md:flex-row md:items-start`}
+        >
           <section className="md:basis-1/3">
             <h3 className={`${styles.heading3}`}>Frontend</h3>
             <hr className="w-72 md:w-48 h-1 mx-auto bg-orange-600 border-0 rounded mb-3 \" />
