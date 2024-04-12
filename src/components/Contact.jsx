@@ -1,18 +1,39 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import styles from "../styles";
 import Button from "./Button";
 import emailjs from "@emailjs/browser";
 
 const Contact = () => {
-  const form = useRef();
+  const formRef = useRef();
+  const [submitted, setSubmitted] = useState(false);
 
   const submit = (e) => {
     e.preventDefault();
+    // setSubmitted(true);
 
-    emailjs.sendForm;
+    // if (!this.validateMail()) {
+    //   return;
+    // }
+
+    emailjs
+      .sendForm(
+        import.meta.env.VITE_SERVICE_ID,
+        import.meta.env.VITE_TEMPLATE_ID,
+        formRef.current,
+        {
+          publicKey: import.meta.env.VITE_PUBLIC_KEY,
+        }
+      )
+      .then(
+        (response) => {
+          console.log("Email succesfully sent! ", response);
+          formRef.current.reset();
+        },
+        (error) => {
+          console.error("Sending email has failed: ", error.text);
+        }
+      );
   };
-
-  console.log(import.meta.env.VITE_SERVICE_ID); // "123"
 
   return (
     <section
@@ -27,14 +48,15 @@ const Contact = () => {
         </p>
       </section>
       <section className="w-full xs:w-2/3 md:w-1/2">
-        <form className="md:w-3/4 m-auto">
-          <div className="mb-3">
-            <label htmlFor="full-name">Full Name:</label>
-            <input
-              type="text"
-              name="full-name"
-              id="full-name"
-              className="
+        {!submitted ? (
+          <form className="md:w-3/4 m-auto" ref={formRef} onSubmit={submit}>
+            <div className="mb-3">
+              <label htmlFor="full-name">Full Name:</label>
+              <input
+                type="text"
+                name="full-name"
+                id="full-name"
+                className="
                 w-full
                 text-slate-900
                 block px-2 py-2 mt-2
@@ -42,15 +64,15 @@ const Contact = () => {
                 border-2
                 border-slate-200
               "
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              name="email"
-              id="email"
-              className="
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email">Email:</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                className="
                 w-full
                 text-slate-900
                 block px-2 py-2 mt-2
@@ -58,15 +80,15 @@ const Contact = () => {
                 border-2
                 border-slate-200
               "
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="email">Subject:</label>
-            <input
-              type="text"
-              name="subject"
-              id="subject"
-              className="
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email">Subject:</label>
+              <input
+                type="text"
+                name="subject"
+                id="subject"
+                className="
                 w-full
                 text-slate-900
                 block px-2 py-2 mt-2
@@ -74,15 +96,15 @@ const Contact = () => {
                 border-2
                 border-slate-200
               "
-            />
-          </div>
-          <div className="mb-5">
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              rows="5"
-              className="
+              />
+            </div>
+            <div className="mb-5">
+              <label htmlFor="message">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                className="
                 resize-none
                 w-full
                 text-slate-900
@@ -91,17 +113,20 @@ const Contact = () => {
                 border-2
                 border-slate-200
               "
-            />
-          </div>
-          <div>
-            <Button
-              type="submit"
-              text="Submit"
-              bgColor="bg-white"
-              textColor="text-orange-600"
-            />
-          </div>
-        </form>
+              />
+            </div>
+            <div>
+              <Button
+                type="submit"
+                text="Submit"
+                bgColor="bg-white"
+                textColor="text-orange-600"
+              />
+            </div>
+          </form>
+        ) : (
+          <div>Submitted</div>
+        )}
       </section>
     </section>
   );
