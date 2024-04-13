@@ -44,9 +44,9 @@ const Navbar = () => {
         <div
           className={`${
             toggle ? "flex" : "hidden"
-          } p-6 bg-black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] rounded-xl sidebar`}
+          } bg-white absolute top-20 right-0 mx-4 min-w-[140px]`}
         >
-          <ul className="list-none flex justify-end items-center flex-1 flex-col">
+          <ul className="list-none flex flex-col text-center border-collapse border">
             {navLinks.map((nav) => (
               <li
                 key={nav.id}
@@ -54,8 +54,11 @@ const Navbar = () => {
                                 font-semibold
                                 cursor-pointer 
                                 text-[16px] 
+                                w-[240px]
                                 text-gray-900
-                                mb-4`}
+                                border
+                                py-4`}
+                onClick={() => setToggle((prev) => !prev)}
               >
                 <a href={`#${nav.id}`}>{nav.title}</a>
               </li>
@@ -66,8 +69,11 @@ const Navbar = () => {
                                 font-semibold
                                 cursor-pointer 
                                 text-[16px] 
+                                w-[240px]
                                 text-gray-900
-                                mb-4`}
+                                border
+                                py-4`}
+              onClick={() => setToggle((prev) => !prev)}
             >
               <a href="#contact">Contact</a>
             </li>
