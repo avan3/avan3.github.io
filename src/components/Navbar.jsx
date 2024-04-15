@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { navLinks } from "../constants";
-import { menu, close } from "../assets";
 import styles from "../styles";
 import Button from "./Button";
 
@@ -15,68 +14,80 @@ const Navbar = () => {
         AV
       </h3>
       <ul className="list-none sm:flex hidden justify-end items-end flex-1">
-        {navLinks.map((nav) => (
-          <li
-            key={nav.id}
-            className={`font-noto_sans
+        {navLinks.map((nav, index) =>
+          index < navLinks.length - 1 ? (
+            <li
+              key={nav.id}
+              className={`font-noto_sans
                         font-semibold
                         cursor-pointer
                         text-[16px]
                         text-slate-900
                         mr-10`}
-          >
-            <a href={`#${nav.id}`}>{nav.title}</a>
-          </li>
-        ))}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
+          ) : (
+            <></>
+          )
+        )}
       </ul>
       <a className="hidden sm:block" href="#contact">
         <Button text="Contact" bgColor="bg-orange-600" textColor="text-white" />
       </a>
 
       <div className="sm:hidden flex flex-1 justify-end items-end">
-        <img
-          src={toggle ? close : menu}
-          alt="menu"
-          className="w-[28px] h-[28px] object-contain"
+        <div
+          className="w-[28px] h-[28px] z-10 flex flex-col justify-around bg-transparent border-none cursor-pointer"
           onClick={() => setToggle((prev) => !prev)}
-        />
+        >
+          <div
+            className={`w-[28px] h-1 bg-slate-900 duration-300 relative rounded-[10px] origin-[1px] ${
+              toggle ? "rotate-45" : "rotate-0"
+            }`}
+          ></div>
+          <div
+            className={`w-[28px] h-1 bg-slate-900 duration-300 relative rounded-[10px] ${
+              toggle ? "-translate-x-5 opacity-0" : "translate-x-0 opacity-100"
+            }`}
+          ></div>
+          <div
+            className={`w-[28px] h-1 bg-slate-900 duration-300 relative rounded-[10px] origin-[1px] ${
+              toggle ? "-rotate-45" : "rotate-0"
+            }`}
+          ></div>
+        </div>
 
         <div
           className={`${
-            toggle ? "flex" : "hidden"
-          } bg-white absolute top-20 right-0 mx-4 min-w-[140px]`}
+            toggle ? "translate-x-0" : "translate-x-96"
+          } flex bg-white absolute top-0 right-0 min-w-[140px] items-center h-[100vh] duration-300`}
         >
-          <ul className="list-none flex flex-col text-center border-collapse border">
-            {navLinks.map((nav) => (
-              <li
-                key={nav.id}
-                className={`font-noto_sans 
-                                font-semibold
-                                cursor-pointer 
-                                text-[16px] 
-                                w-[240px]
-                                text-gray-900
-                                border
-                                py-4`}
-                onClick={() => setToggle((prev) => !prev)}
-              >
-                <a href={`#${nav.id}`}>{nav.title}</a>
-              </li>
-            ))}
-            <li
-              key="contact"
-              className={`font-noto_sans 
-                                font-semibold
-                                cursor-pointer 
-                                text-[16px] 
-                                w-[240px]
-                                text-gray-900
-                                border
-                                py-4`}
-              onClick={() => setToggle((prev) => !prev)}
-            >
-              <a href="#contact">Contact</a>
-            </li>
+          <ul className="list-none flex flex-col">
+            {navLinks.map((nav) => {
+              const Icon = nav.icon;
+              return (
+                <li
+                  key={nav.id}
+                  className={`font-noto_sans 
+                                  font-semibold
+                                  cursor-pointer 
+                                  text-[16px] 
+                                  w-[240px]
+                                  text-gray-900
+                                  flex items-center justify-center
+                                  py-4`}
+                  onClick={() => setToggle((prev) => !prev)}
+                >
+                  {Icon ? (
+                    <Icon className="w-[40px] h-[20px] justify-center" />
+                  ) : (
+                    ""
+                  )}
+                  <a href={`#${nav.id}`}>{nav.title}</a>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>
