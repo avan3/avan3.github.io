@@ -1,64 +1,74 @@
 import React from "react";
 import styles from "../styles";
-import { FaAngular, FaHtml5, FaReact, FaCss3Alt } from "react-icons/fa6";
-import { IoLogoJavascript } from "react-icons/io5";
+import java from "../assets/java.svg";
+import react from "../assets/react.svg";
+import angular from "../assets/angular.svg";
+import javascript from "../assets/javascript.svg";
+import html from "../assets/html.svg";
+import css from "../assets/css.svg";
+import springboot from "../assets/springboot.svg";
+import nodejs from "../assets/nodejs.svg";
+import postgresql from "../assets/postgresql.svg";
+import mysql from "../assets/mysql.svg";
+import vscode from "../assets/vscode.svg";
+import intellij from "../assets/intellij.svg";
+import github from "../assets/github.svg";
+import jira from "../assets/jira.svg";
+import azure from "../assets/azure.svg";
 
 const FrontEndSkills = [
   {
     id: "angular",
     name: "Angular",
-    icon: FaAngular,
+    icon: angular,
   },
   {
     id: "react",
     name: "React",
-    icon: FaReact,
+    icon: react,
   },
   {
     id: "javascript",
     name: "JavaScript",
-    icon: IoLogoJavascript,
+    icon: javascript,
   },
   {
     id: "html",
     name: "HTML",
-    icon: FaHtml5,
+    icon: html,
   },
   {
     id: "css",
     name: "CSS",
-    icon: FaCss3Alt,
+    icon: css,
   },
 ];
 
 const BackEndSkills = [
   {
-    id: "sb",
+    id: "springboot",
     name: "Spring Boot",
+    icon: springboot,
   },
   {
     id: "java",
     name: "Java",
-  },
-  {
-    id: "junit",
-    name: "Junit",
+    icon: java,
   },
   {
     id: "nodejs",
     name: "Node JS",
-  },
-  {
-    id: "expressjs",
-    name: "ExpressJS",
-  },
-  {
-    id: "psql",
-    name: "PostgreSQL",
+    icon: nodejs,
   },
   {
     id: "mysql",
     name: "MySQL",
+    icon: mysql,
+  },
+  {
+    id: "psql",
+    name: "PostgreSQL",
+    icon: postgresql,
   },
 ];
 
@@ -66,30 +76,27 @@ const Tools = [
   {
     id: "vsc",
     name: "VS Code",
+    icon: vscode,
   },
   {
     id: "intellij",
     name: "IntelliJ",
+    icon: intellij,
   },
   {
     id: "github",
     name: "GitHub",
+    icon: github,
   },
   {
     id: "jira",
     name: "Jira",
-  },
-  {
-    id: "jenkins",
-    name: "Jenkins",
+    icon: jira,
   },
   {
     id: "azure",
     name: "Microsoft Azure",
-  },
-  {
-    id: "bash",
-    name: "Bash",
+    icon: azure,
   },
 ];
 
@@ -106,22 +113,19 @@ const Skills = () => {
             <h3 className={`${styles.heading3}`}>Frontend</h3>
             <hr className="w-72 md:w-48 h-1 mx-auto bg-orange-600 border-0 rounded mb-3 \" />
             <ul className="py-1">
-              {FrontEndSkills.map((skill) => {
-                const Icon = skill.icon;
-                return (
-                  <li
-                    key={skill.id}
-                    className={`${styles.paragraph} flex flex-col items-center`}
-                  >
-                    {Icon ? (
-                      <Icon className={`w-[36px] h-[36px] text-${skill.id}`} />
-                    ) : (
-                      ""
-                    )}
-                    <span className="hover:text-orange-600">{skill.name}</span>
-                  </li>
-                );
-              })}
+              {FrontEndSkills.map((skill) => (
+                <li
+                  key={skill.id}
+                  className={`${styles.paragraph} flex flex-col items-center`}
+                >
+                  <img
+                    src={skill.icon}
+                    alt={skill.id}
+                    className="w-[36px] h-[36px]"
+                  />
+                  <span className="hover:text-orange-600">{skill.name}</span>
+                </li>
+              ))}
             </ul>
           </section>
           <section className="md:basis-1/3">
@@ -131,9 +135,14 @@ const Skills = () => {
               {BackEndSkills.map((skill) => (
                 <li
                   key={skill.id}
-                  className={`${styles.paragraph} hover:text-orange-600`}
+                  className={`${styles.paragraph} flex flex-col items-center`}
                 >
-                  {skill.name}
+                  <img
+                    src={skill.icon}
+                    alt={skill.id}
+                    className="w-[36px] h-[36px]"
+                  />
+                  <span className="hover:text-orange-600">{skill.name}</span>
                 </li>
               ))}
             </ul>
@@ -145,9 +154,14 @@ const Skills = () => {
               {Tools.map((skill) => (
                 <li
                   key={skill.id}
-                  className={`${styles.paragraph} hover:text-orange-600`}
+                  className={`${styles.paragraph} flex flex-col items-center`}
                 >
-                  {skill.name}
+                  <img
+                    src={skill.icon}
+                    alt={skill.id}
+                    className="w-[36px] h-[36px]"
+                  />
+                  <span className="hover:text-orange-600">{skill.name}</span>
                 </li>
               ))}
             </ul>
