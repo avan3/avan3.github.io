@@ -14,23 +14,20 @@ const Navbar = () => {
         AV
       </h3>
       <ul className="list-none sm:flex hidden justify-end items-end flex-1">
-        {navLinks.map((nav, index) =>
-          index < navLinks.length - 1 ? (
-            <li
-              key={nav.id}
-              className={`font-noto_sans
+        {navLinks.map((nav, index) => (
+          <li
+            key={nav.id}
+            className={`font-noto_sans
                         font-semibold
                         cursor-pointer
                         text-[16px]
                         text-slate-900
-                        mr-10`}
-            >
-              <a href={`#${nav.id}`}>{nav.title}</a>
-            </li>
-          ) : (
-            <></>
-          )
-        )}
+                        mr-10 
+                      ${index < navLinks.length - 1 ? "block" : "hidden"}`}
+          >
+            <a href={`#${nav.id}`}>{nav.title}</a>
+          </li>
+        ))}
       </ul>
       <a className="hidden sm:block" href="#contact">
         <Button text="Contact" bgColor="bg-orange-600" textColor="text-white" />

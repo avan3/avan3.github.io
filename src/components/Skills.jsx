@@ -1,34 +1,33 @@
 import React from "react";
 import styles from "../styles";
+import { FaAngular, FaHtml5, FaReact, FaCss3Alt } from "react-icons/fa6";
+import { IoLogoJavascript } from "react-icons/io5";
 
 const FrontEndSkills = [
   {
     id: "angular",
     name: "Angular",
+    icon: FaAngular,
   },
   {
     id: "react",
     name: "React",
+    icon: FaReact,
   },
   {
-    id: "ngrx",
-    name: "NgRx",
-  },
-  {
-    id: "rxjs",
-    name: "RxJS",
-  },
-  {
-    id: "js",
+    id: "javascript",
     name: "JavaScript",
+    icon: IoLogoJavascript,
   },
   {
     id: "html",
     name: "HTML",
+    icon: FaHtml5,
   },
   {
     id: "css",
     name: "CSS",
+    icon: FaCss3Alt,
   },
 ];
 
@@ -107,14 +106,22 @@ const Skills = () => {
             <h3 className={`${styles.heading3}`}>Frontend</h3>
             <hr className="w-72 md:w-48 h-1 mx-auto bg-orange-600 border-0 rounded mb-3 \" />
             <ul className="py-1">
-              {FrontEndSkills.map((skill) => (
-                <li
-                  key={skill.id}
-                  className={`${styles.paragraph} hover:text-orange-600`}
-                >
-                  {skill.name}
-                </li>
-              ))}
+              {FrontEndSkills.map((skill) => {
+                const Icon = skill.icon;
+                return (
+                  <li
+                    key={skill.id}
+                    className={`${styles.paragraph} flex flex-col items-center`}
+                  >
+                    {Icon ? (
+                      <Icon className={`w-[36px] h-[36px] text-${skill.id}`} />
+                    ) : (
+                      ""
+                    )}
+                    <span className="hover:text-orange-600">{skill.name}</span>
+                  </li>
+                );
+              })}
             </ul>
           </section>
           <section className="md:basis-1/3">
