@@ -5,10 +5,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#00040f",
-        secondary: "#ffa600",
-        dimWhite: "rgba(255, 255, 255, 0.7)",
-        dimBlue: "rgba(9, 151, 124, 0.1)",
+        angular: "#c3002f",
+        react: "#61DBFB",
+        javascript: "#F0DB4F",
+        css: "#2965f1",
+        html: "#f06529",
       },
       fontFamily: {
         noto_sans: ["Noto Sans", "sans-serif"],
