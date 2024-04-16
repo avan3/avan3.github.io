@@ -2,7 +2,7 @@ import { useState } from "react";
 import { navLinks } from "../constants";
 import styles from "../styles";
 import Button from "./Button";
-import av_logo from "../assets/av_logo.png";
+import av_logo from "../assets/av_logo2.svg";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
