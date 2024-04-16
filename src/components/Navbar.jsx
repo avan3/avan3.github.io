@@ -12,7 +12,11 @@ const Navbar = () => {
       className={`w-full xl:w-2/3 flex py-3 justify-between items-center navbar top-0  ${styles.paddingX}`}
     >
       <h3 className="text-[32px] text-orange-600 font-noto_sans font-bold">
-        <img src={av_logo} alt="av_logo" className="w-[66px] h-[42px]" />
+        <img
+          src={av_logo}
+          alt="av_logo"
+          className="w-[66px] h-[42px] my-2 relative"
+        />
       </h3>
       <ul className="list-none sm:flex hidden justify-end items-end flex-1">
         {navLinks.map((nav, index) => (
