@@ -63,7 +63,7 @@ const Navbar = () => {
         <div
           className={`${
             toggle ? "translate-x-0" : "translate-x-96"
-          } flex bg-white absolute top-0 right-0 min-w-[140px] items-center h-[100vh] duration-300`}
+          } flex bg-white absolute top-0 right-0 min-w-[240px] items-center h-[100vh] duration-300 border border-orange-600`}
         >
           <ul className="list-none flex flex-col">
             {navLinks.map((nav) => {
@@ -75,14 +75,14 @@ const Navbar = () => {
                                   font-semibold
                                   cursor-pointer 
                                   text-[16px] 
-                                  w-[240px]
+                                  w-[270px]
                                   text-gray-900
                                   flex items-center justify-center
                                   py-4`}
                   onClick={() => setToggle((prev) => !prev)}
                 >
                   {Icon ? (
-                    <Icon className="w-[40px] h-[20px] justify-center" />
+                    <Icon className="w-[40px] h-[20px] justify-center text-orange-600" />
                   ) : (
                     ""
                   )}
