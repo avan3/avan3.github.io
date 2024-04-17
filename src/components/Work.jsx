@@ -40,7 +40,7 @@ const Work = () => {
               <Button
                 className="mx-5"
                 text={
-                  <a href="../assets/AVResume.pdf" download="AVResume.pdf">
+                  <a href="/src/assets/AVResume.pdf" download="AVResume.pdf">
                     Download Resume
                   </a>
                 }
