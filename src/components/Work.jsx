@@ -41,7 +41,7 @@ const Work = () => {
                 className="mx-5"
                 text={
                   <a
-                    href="/src/assets/AVResume.pdf"
+                    href="AVResume.pdf"
                     download="AVResume.pdf"
                     target="_blank"
                   >
