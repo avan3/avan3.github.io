@@ -3,6 +3,7 @@ import { navLinks } from "../constants";
 import styles from "../styles";
 import Button from "./Button";
 import av_logo from "../assets/av_logo2.svg";
+import DarkMode from "./DarkMode";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
@@ -26,7 +27,7 @@ const Navbar = () => {
                         font-semibold
                         cursor-pointer
                         text-[16px]
-                        text-slate-900
+                        text-secondary
                         mr-10 
                       ${index < navLinks.length - 1 ? "block" : "hidden"}`}
           >
@@ -35,8 +36,9 @@ const Navbar = () => {
         ))}
       </ul>
       <a className="hidden sm:block" href="#contact">
-        <Button text="Contact" bgColor="bg-orange-600" textColor="text-white" />
+        <Button text="Contact" bgColor="bg-primary" textColor="text-white" />
       </a>
+      <DarkMode />
 
       <div className="sm:hidden flex flex-1 justify-end items-end">
         <div
@@ -44,17 +46,17 @@ const Navbar = () => {
           onClick={() => setToggle((prev) => !prev)}
         >
           <div
-            className={`w-[28px] h-1 bg-slate-900 duration-300 relative rounded-[10px] origin-[1px] ${
+            className={`w-[28px] h-1 bg-secondary duration-300 relative rounded-[10px] origin-[1px] ${
               toggle ? "rotate-45" : "rotate-0"
             }`}
           ></div>
           <div
-            className={`w-[28px] h-1 bg-slate-900 duration-300 relative rounded-[10px] ${
+            className={`w-[28px] h-1 bg-secondary duration-300 relative rounded-[10px] ${
               toggle ? "-translate-x-5 opacity-0" : "translate-x-0 opacity-100"
             }`}
           ></div>
           <div
-            className={`w-[28px] h-1 bg-slate-900 duration-300 relative rounded-[10px] origin-[1px] ${
+            className={`w-[28px] h-1 bg-secondary duration-300 relative rounded-[10px] origin-[1px] ${
               toggle ? "-rotate-45" : "rotate-0"
             }`}
           ></div>
@@ -63,7 +65,7 @@ const Navbar = () => {
         <div
           className={`${
             toggle ? "translate-x-0" : "translate-x-96"
-          } flex bg-white absolute top-0 right-0 min-w-[240px] items-center h-[100vh] duration-300 border border-orange-600`}
+          } flex bg-background absolute top-0 right-0 min-w-[240px] items-center h-[100vh] duration-300 border border-primary`}
         >
           <ul className="list-none flex flex-col">
             {navLinks.map((nav) => {
@@ -76,13 +78,13 @@ const Navbar = () => {
                                   cursor-pointer 
                                   text-[16px] 
                                   w-[270px]
-                                  text-gray-900
+                                  text-secondary
                                   flex items-center justify-center
                                   py-4`}
                   onClick={() => setToggle((prev) => !prev)}
                 >
                   {Icon ? (
-                    <Icon className="w-[40px] h-[20px] justify-center text-orange-600" />
+                    <Icon className="w-[40px] h-[20px] justify-center text-primary" />
                   ) : (
                     ""
                   )}

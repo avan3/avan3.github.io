@@ -10,7 +10,7 @@ import ScrollToTop from "./components/ScrollToTop";
 function App() {
   return (
     <div
-      className={`w-full relative overflow-hidden leading-relaxed text-gray-900 antialiased`}
+      className={`w-full relative overflow-hidden leading-relaxed antialiased bg-background`}
     >
       <div className={`${styles.flexCenter}`}>
         <Navbar />

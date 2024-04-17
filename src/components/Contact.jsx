@@ -6,7 +6,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="bg-orange-600 text-white p-10 flex flex-col md:flex-row justify-between items-center"
+      className="bg-primary text-white p-10 flex flex-col md:flex-row justify-between items-center"
     >
       <section className="text-center w-full xs:w-2/3 md:w-1/2">
         <h2 className={`${styles.heading2}`}>Contact Me.</h2>

@@ -17,7 +17,6 @@ const Form = () => {
 
   const onSubmit = methods.handleSubmit((data) => {
     console.log("Contact form submission!", data);
-    setSuccess(true);
 
     emailjs
       .send(
@@ -70,7 +69,7 @@ const Form = () => {
                 type="button"
                 text="Send Another Email"
                 bgColor="bg-white"
-                textColor="text-orange-600"
+                textColor="text-primary"
               />
             </>
           ) : (
@@ -79,7 +78,7 @@ const Form = () => {
               type="submit"
               text="Submit"
               bgColor="bg-white"
-              textColor="text-orange-600"
+              textColor="text-primary"
             />
           )}
         </div>
