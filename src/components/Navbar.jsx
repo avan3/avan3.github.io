@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { navLinks } from "../constants";
 import styles from "../styles";
 import Button from "./Button";
@@ -7,6 +7,23 @@ import DarkMode from "./DarkMode";
 
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
+
+  const [theme, setTheme] = useState(
+    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
+  );
+
+  // access to html element
+  const element = document.documentElement;
+
+  // set theme to localStorage and html element
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    if (theme === "dark") {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  });
 
   return (
     <nav
@@ -19,26 +36,28 @@ const Navbar = () => {
           className="w-[66px] h-[42px] my-2 relative"
         />
       </h3>
-      <ul className="list-none sm:flex hidden justify-end items-end flex-1">
-        {navLinks.map((nav, index) => (
-          <li
-            key={nav.id}
-            className={`font-noto_sans
-                        font-semibold
-                        cursor-pointer
-                        text-[16px]
-                        text-secondary
-                        mr-10 
-                      ${index < navLinks.length - 1 ? "block" : "hidden"}`}
-          >
-            <a href={`#${nav.id}`}>{nav.title}</a>
-          </li>
-        ))}
-      </ul>
-      <a className="hidden sm:block" href="#contact">
-        <Button text="Contact" bgColor="bg-primary" textColor="text-white" />
-      </a>
-      <DarkMode />
+      <span className="hidden sm:flex justify-end items-center flex-1">
+        <ul className="list-none flex">
+          {navLinks.map((nav, index) => (
+            <li
+              key={nav.id}
+              className={`font-noto_sans
+          font-semibold
+          cursor-pointer
+          text-[16px]
+          text-secondary
+          mr-10 
+          ${index < navLinks.length - 1 ? "block" : "hidden"}`}
+            >
+              <a href={`#${nav.id}`}>{nav.title}</a>
+            </li>
+          ))}
+        </ul>
+        <a className="mr-10" href="#contact">
+          <Button text="Contact" bgColor="bg-primary" textColor="text-white" />
+        </a>
+        <DarkMode theme={theme} setTheme={setTheme} />
+      </span>
 
       <div className="sm:hidden flex flex-1 justify-end items-end">
         <div
@@ -92,6 +111,9 @@ const Navbar = () => {
                 </li>
               );
             })}
+            <div className="flex items-center justify-center py-4">
+              <DarkMode theme={theme} setTheme={setTheme} />
+            </div>
           </ul>
         </div>
       </div>
