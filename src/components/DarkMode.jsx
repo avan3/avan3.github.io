@@ -1,12 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useTheme } from "../context/ThemeContext";
 
-const DarkMode = ({ theme, setTheme }) => {
+const DarkMode = () => {
+  const { theme, toggleTheme } = useTheme();
+
+  // access to html element
+  const element = document.documentElement;
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    if (theme === "dark") {
+      element.classList.add("dark");
+    } else {
+      element.classList.remove("dark");
+    }
+  });
+
   return (
     <button type="btn" className="relative w-[24px] h-[24px]">
       <input
-        onChange={() =>
-          setTheme((prev) => (prev === "dark" ? "light" : "dark"))
-        }
+        onChange={toggleTheme}
         className="mr-2 mt-[0.3rem] h-3.5 w-8 appearance-none rounded-[0.4375rem] bg-orange-400
           before:pointer-events-none before:absolute before:h-3.5 before:w-3.5 before:rounded-full 
           before:bg-transparent before:content-[''] after:absolute after:z-[2] after:-mt-[0.1875rem] 
@@ -22,7 +35,7 @@ const DarkMode = ({ theme, setTheme }) => {
           dark:checked:after:bg-primary"
         type="checkbox"
         role="switch"
-        id="flexSwitchCheckDefault"
+        name="flexSwitchCheckDefault"
         checked={theme === "dark"}
       />
     </button>

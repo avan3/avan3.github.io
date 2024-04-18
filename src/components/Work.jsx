@@ -37,20 +37,11 @@ const Work = () => {
             <h3 className={`${styles.heading3}`}>Resume</h3>
             <hr className="w-72 md:w-48 h-1 mx-auto bg-primary border-0 rounded mb-3 \" />
             <section className="w-full mx-auto my-12 flex justify-center">
-              <Button
-                className="mx-5"
-                text={
-                  <a
-                    href="AVResume.pdf"
-                    download="AVResume.pdf"
-                    target="_blank"
-                  >
-                    Download Resume
-                  </a>
-                }
-                bgColor="bg-primary"
-                textColor="text-white"
-              />
+              <Button className="mx-5 bg-primary text-white">
+                <a href="AVResume.pdf" download="AVResume.pdf" target="_blank">
+                  Download Resume
+                </a>
+              </Button>
             </section>
           </section>
         </section>

@@ -8,23 +8,6 @@ import DarkMode from "./DarkMode";
 const Navbar = () => {
   const [toggle, setToggle] = useState(false);
 
-  const [theme, setTheme] = useState(
-    localStorage.getItem("theme") ? localStorage.getItem("theme") : "light"
-  );
-
-  // access to html element
-  const element = document.documentElement;
-
-  // set theme to localStorage and html element
-  useEffect(() => {
-    localStorage.setItem("theme", theme);
-    if (theme === "dark") {
-      element.classList.add("dark");
-    } else {
-      element.classList.remove("dark");
-    }
-  });
-
   return (
     <nav
       className={`w-full xl:w-2/3 flex py-3 justify-between items-center navbar top-0  ${styles.paddingX}`}
@@ -54,9 +37,9 @@ const Navbar = () => {
           ))}
         </ul>
         <a className="mr-10" href="#contact">
-          <Button text="Contact" bgColor="bg-primary" textColor="text-white" />
+          <Button className="bg-primary text-white">Contact</Button>
         </a>
-        <DarkMode theme={theme} setTheme={setTheme} />
+        <DarkMode />
       </span>
 
       <div className="sm:hidden flex flex-1 justify-end items-end">
@@ -112,7 +95,7 @@ const Navbar = () => {
               );
             })}
             <div className="flex items-center justify-center py-4">
-              <DarkMode theme={theme} setTheme={setTheme} />
+              <DarkMode />
             </div>
           </ul>
         </div>
