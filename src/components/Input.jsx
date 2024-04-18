@@ -34,6 +34,7 @@ const Input = ({ type, id, placeholder, validation }) => {
           name={id}
           rows="5"
           placeholder={placeholder}
+          autoComplete="true"
           className="
             resize-none
             w-full
@@ -52,6 +53,7 @@ const Input = ({ type, id, placeholder, validation }) => {
           name={id}
           id={id}
           placeholder={placeholder}
+          autoComplete="true"
           className="
             w-full
             text-slate-900
