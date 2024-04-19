@@ -107,6 +107,7 @@ const Form = () => {
               )}
               <Button
                 onClick={onSubmit}
+                disabled={state.loading}
                 type="submit"
                 className="bg-white text-primary mt-2"
               >
