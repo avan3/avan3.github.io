@@ -37,7 +37,9 @@ const Navbar = () => {
           ))}
         </ul>
         <a className="mr-10" href="#contact">
-          <Button className="bg-primary text-white px-8">Contact</Button>
+          <Button className="bg-primary text-white px-8 hover:scale-105 duration-300">
+            Contact
+          </Button>
         </a>
         <DarkMode />
       </span>
