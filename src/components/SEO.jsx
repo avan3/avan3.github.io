@@ -1,12 +1,15 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 
-export default function SEO({ title, description, name, type }) {
+export default function SEO({ title, description, name, type, image }) {
   return (
     <Helmet>
       {/* Standard metadata tags */}
       <title>{title}</title>
       <meta name="description" content={description} />
+      <meta property="og:image" content={image} />
+      <meta property="og:image:width" content="600" />
+      <meta property="og:image:height" content="400" />
       {/* End standard metadata tags */}
       {/* Facebook tags */}
       <meta property="og:type" content={type} />
@@ -14,10 +17,11 @@ export default function SEO({ title, description, name, type }) {
       <meta property="og:description" content={description} />
       {/* End Facebook tags */}
       {/* Twitter tags */}
-      <meta name="twitter:creator" content={name} />}
+      <meta name="twitter:creator" content={name} />
       <meta name="twitter:card" content={type} />
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
+      <meta name="twitter:image" content={image} />
       {/* End Twitter tags */}
     </Helmet>
   );
