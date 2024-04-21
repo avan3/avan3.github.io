@@ -21,16 +21,16 @@
 ### Built With
 
 <!-- TODO: List any MAJOR libraries/frameworks (e.g. React, Tailwind) with links to their homepages. -->
-Initialized the project using Vite with React
-Installed Tailwind CSS and react-icons
-Built and deployed using Github Actions
-Included SEO elements using react-helmet-async 
-Leverage EmailJS to send emails
+- Initialized the project using Vite with React
+- Installed Tailwind CSS and react-icons
+- Built and deployed using Github Actions
+- Included SEO elements using react-helmet-async 
+- Leverage EmailJS to send emails
 
 ## Features
 
 <!-- TODO: List what specific 'user problems' that this application solves. -->
-Simple one page portfolio website built from scratch without any template
-Has a switch on the top right corner of the website (on desktop) or in the bottom of the menu (on mobile) for dark mode
-Working contact form able to send emails, and has loading/success/error states 
-Downloadable resume on button click
+- Simple one page portfolio website built from scratch without any template
+- Has a switch on the top right corner of the website (on desktop) or in the bottom of the menu (on mobile) for dark mode which persists through browser reloads using Local Storage
+- Working contact form able to send emails, and has loading/success/error states 
+- Downloadable resume on button click
