@@ -19,6 +19,12 @@ module.exports = {
       fontFamily: {
         noto_sans: ["Noto Sans", "sans-serif"],
       },
+      brightness: {
+        85: ".85",
+      },
+      backgroundImage: {
+        sakuraOmakase: "url('/src/assets/sakura_omakase.jpg')",
+      },
     },
     screens: {
       xs: "480px",
