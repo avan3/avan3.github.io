@@ -18,14 +18,14 @@ const Skills = () => {
               {FrontEndSkills.map((skill) => (
                 <li
                   key={skill.id}
-                  className={`${styles.paragraph} flex flex-col items-center`}
+                  className={`${styles.paragraph} flex flex-col items-center group`}
                 >
                   <img
                     src={skill.icon}
                     alt={skill.id}
-                    className="w-[36px] h-[36px]"
+                    className="w-[36px] h-[36px] group-hover:scale-110"
                   />
-                  <span className="hover:text-primary">{skill.name}</span>
+                  <span className="group-hover:text-primary">{skill.name}</span>
                 </li>
               ))}
             </ul>
@@ -37,14 +37,14 @@ const Skills = () => {
               {BackEndSkills.map((skill) => (
                 <li
                   key={skill.id}
-                  className={`${styles.paragraph} flex flex-col items-center`}
+                  className={`${styles.paragraph} flex flex-col items-center group`}
                 >
                   <img
                     src={skill.icon}
                     alt={skill.id}
-                    className="w-[36px] h-[36px]"
+                    className="w-[36px] h-[36px] group-hover:scale-110"
                   />
-                  <span className="hover:text-primary">{skill.name}</span>
+                  <span className="group-hover:text-primary">{skill.name}</span>
                 </li>
               ))}
             </ul>
@@ -56,14 +56,14 @@ const Skills = () => {
               {Tools.map((skill) => (
                 <li
                   key={skill.id}
-                  className={`${styles.paragraph} flex flex-col items-center`}
+                  className={`${styles.paragraph} flex flex-col items-center group`}
                 >
                   <img
                     src={skill.icon}
                     alt={skill.id}
-                    className="w-[36px] h-[36px]"
+                    className="w-[36px] h-[36px] group-hover:scale-110"
                   />
-                  <span className="hover:text-primary">{skill.name}</span>
+                  <span className="group-hover:text-primary">{skill.name}</span>
                 </li>
               ))}
             </ul>

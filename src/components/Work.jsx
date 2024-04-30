@@ -8,6 +8,27 @@ const Work = () => {
       <section className="w-full md:w-[1020px] text-center">
         <h2 className={`${styles.heading2}`}>Work.</h2>
         <hr className="w-48 h-1 mx-auto my-4 bg-primary border-0 rounded md:my-5 \" />
+        <section className={`${styles.flexCenter} flex-col md:flex-row`}>
+          <div className="group flex flex-col gap-3 w-[320px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.75rem] pt-[1.21rem] pb-[2.61rem] px-[1.26rem] md:px-[2.06rem]">
+            <a href="https://avan3.github.io/sakura_omakase/">
+              <div className="m-auto flex justify-center items-center w-[200px] h-[200px] bg-sakuraOmakase bg-contain group-hover:brightness-85">
+                {/* <span className="font-semibold text-xl duration-300 opacity-0 group-hover:opacity-100">
+                  Go to
+                </span> */}
+              </div>
+            </a>
+            <div className="basis-1/2">
+              <p className="font-noto_sans font-bold text-lg group-hover:text-orange-600">
+                Sakura Omakase
+              </p>
+              {/* <p>
+                Mock Japanesese restaurant website that is responsive and
+                visually appealing.
+                <br /> Leveraging React and Tailwind CSS
+              </p> */}
+            </div>
+          </div>
+        </section>
         <section
           className={`${styles.flexCenter} flex-col md:flex-row md:items-start`}
         >
