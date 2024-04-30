@@ -23,7 +23,7 @@ module.exports = {
         85: ".85",
       },
       backgroundImage: {
-        sakuraOmakase: "url('/src/assets/sakura_omakase.jpg')",
+        sakuraOmakase: "url('/src/assets/sakura_omakase.webp')",
       },
     },
     screens: {
