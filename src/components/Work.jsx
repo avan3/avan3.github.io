@@ -48,7 +48,8 @@ const Work = () => {
             <section className="w-full mx-auto py-1 flex flex-col sm:flex-row justify-around">
               <section className={`${styles.paragraph} w-full sm:w-[480px]`}>
                 <p className="text-lg">
-                  <span className="font-bold">IT Developer III</span> · TD Bank
+                  <span className="font-bold">Software Engineer I</span> · TD
+                  Bank
                 </p>
                 <p className="text-primary text-md">Dec 2022 - Present</p>
                 <ul className="text-sm">
