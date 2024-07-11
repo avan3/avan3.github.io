@@ -25,6 +25,7 @@ module.exports = {
       backgroundImage: {
         sakuraOmakase: "url('/src/assets/sakura_omakase.webp')",
         vanzhangWedding: "url('/src/assets/wedding_app.webp')",
+        leonsgarden: "url('/src/assets/leonsgarden.webp')",
       },
     },
     screens: {
