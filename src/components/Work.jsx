@@ -28,7 +28,7 @@ const Work = () => {
               </p> */}
             </div>
           </div>
-          <div className="group flex flex-col gap-3 w-[320px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.75rem] pt-[1.21rem] pb-[2.61rem] px-[1.26rem] md:px-[2.06rem]">
+          {/* <div className="group flex flex-col gap-3 w-[320px] shadow-[rgba(13,_38,_76,_0.19)_0px_9px_20px] rounded-[1.75rem] pt-[1.21rem] pb-[2.61rem] px-[1.26rem] md:px-[2.06rem]">
             <a href="https://vz-wedding.netlify.app/">
               <div className="m-auto flex justify-center items-center w-[200px] h-[200px] bg-vanzhangWedding bg-no-repeat bg-contain group-hover:brightness-85"></div>
             </a>
@@ -47,7 +47,7 @@ const Work = () => {
                 Leon&apos;s Garden
               </p>
             </div>
-          </div>
+          </div> */}
         </section>
         <section
           className={`${styles.flexCenter} flex-col md:flex-row md:items-start`}
